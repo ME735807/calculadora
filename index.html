@@ -1,57 +1,41 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Maria Eduarda Nogueira Contri</title>
-</head>
-    <body>
-        <div class="container">
-            <h2>Calculadora</h2>
-            <input type="number" id="numero1" placeholder="Número 1">
-            <br><br>
-            <input type="number" id="numero2" placeholder="Número 2">
-            
-            <div>
-                <br>
-                <button onclick="calcular('+')">+</button>
-                <button onclick="calcular('-')">-</button>
-                <button onclick="calcular('*')">*</button>
-                <button onclick="calcular('/')">/</button>
-            </div>
-            <br>
-            <div id="resultado">Resultado: </div>
-        </div>
-
-        <script>
-            function calcular(operacao) {
-                const numero1 = parseFloat(document.getElementById('numero1').value);
-                const numero2 = parseFloat(document.getElementById('numero2').value);
-                let resultado;
-
-                if (isNaN(numero1) || isNaN(numero2)) {
-                    resultado = 'Por favor, insira números válidos';
-                } else {
-                    switch (operacao) {
-                        case '+':
-                            resultado = numero1 + numero2;
-                            break;
-                        case '-':
-                            resultado = numero1 - numero2;
-                            break;
-                        case '*':
-                            resultado = numero1 * numero2;
-                            break;
-                        case '/':
-                            resultado = numero2 !== 0 ? numero1 / numero2 : 'Erro: divisão por zero';
-                            break;
-                        default:
-                            resultado = 'Operação inválida';
-                    }
-                }
-
-                document.getElementById('resultado').textContent = `Resultado: ${resultado}`;
-            }
-        </script>
-    </body>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/scripts.js" defer></script>
+  </head>
+  <body>
+    <div id="calc">
+      <h3>Calculadora</h3>
+      <div id="operations">
+        <div id="previous-operation"></div>
+        <div id="current-operation"></div>
+      </div>
+      <div id="buttons-container">
+        <button>CE</button>
+        <button>C</button>
+        <button>DEL</button>
+        <button>/</button>
+        <button class="number">7</button>
+        <button class="number">8</button>
+        <button class="number">9</button>
+        <button>*</button>
+        <button class="number">4</button>
+        <button class="number">5</button>
+        <button class="number">6</button>
+        <button>-</button>
+        <button class="number">1</button>
+        <button class="number">2</button>
+        <button class="number">3</button>
+        <button>+</button>
+        <button class="number">0</button>
+        <button class="number">.</button>
+        <button id="equal-btn">=</button>
+      </div>
+    </div>
+  </body>
 </html>
